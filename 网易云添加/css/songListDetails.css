@@ -1,0 +1,284 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.songListDetails-box {
+    width: 700px;
+    height: 400px;
+    outline: 1px solid pink;
+    display: flex;
+    align-items: center;
+}
+
+.songListDetails-box-img {
+    width: 260px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+}
+
+.songListDetails-box-details {
+    width: 440px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.img-box {
+    margin-top: 60px;
+    width: 205px;
+    height: 205px;
+    outline: 2px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-box img {
+    width: 200px;
+    height: 200px;
+}
+
+.playlistTAB {
+    width: 45px;
+    height: 30px;
+    background-color: red;
+    border-radius: 5px;
+    color: white;
+    line-height: 30px;
+    text-align: center;
+}
+
+.playlistName span {
+    padding-left: 12px;
+}
+
+.songSingleUser {
+    width: 440px;
+    display: flex;
+    align-items: center;
+}
+
+.songSingleUser span:nth-of-type(1) img {
+    width: 40px;
+    height: 40px;
+}
+
+.songSingleUser span:nth-of-type(2) {
+    color: #0c73c2;
+    margin-left: 10px;
+}
+
+.label {
+    display: flex;
+}
+
+.theLabelColor {
+    display: block;
+    width: 50px;
+    height: 25px;
+    font-size: 12px;
+    line-height: 25px;
+    text-align: center;
+    border-radius: 20px;
+    margin-left: 10px;
+    background-color: #f5f5f5;
+}
+
+.introduce {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 8;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+
+
+
+/* 歌单列表 */
+.allTheSongsSongList {
+    width: 700px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.totalSong span:nth-of-type(1) {
+    font-size: 22px;
+}
+
+.totalSong span:nth-of-type(2) {
+    font-size: 14px;
+}
+
+.degree {
+    display: flex;
+    align-items: center;
+}
+
+.degree span {
+    font-size: 12px;
+}
+
+.theSongList-header {
+    width: 700px;
+    height: 40px;
+    display: flex;
+    line-height: 40px;
+    outline: 1px solid #ccc;
+}
+
+.theSongList-header span:nth-of-type(1) {
+    display: block;
+    width: 53px;
+    height: 40px;
+    outline: 1px solid #ccc;
+}
+
+.theSongList-header span:nth-of-type(2) {
+    padding-left: 12px;
+    width: 200px;
+    outline: 1px solid #ccc;
+}
+
+.theSongList-header span:nth-of-type(3) {
+    padding-left: 12px;
+    width: 120px;
+    outline: 1px solid #ccc;
+}
+
+.theSongList-header span:nth-of-type(4) {
+    padding-left: 12px;
+    width: 100px;
+    outline: 1px solid #ccc;
+}
+
+.theSongList-header span:nth-of-type(5) {
+    padding-left: 12px;
+}
+
+.theSongList {
+    width: 700px;
+    outline: 1px solid #ccc;
+    display: flex;
+}
+
+.songSequence {
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.songSequence span {
+    text-align: center;
+    height: 25px;
+    line-height: 25px;
+    background-color: #f5f5f5;
+}
+
+.songSequence span:nth-child(2n) {
+    background-color: white;
+}
+
+.theSongTitle {
+    display: flex;
+    flex-direction: column;
+}
+
+.theSongTitle span {
+    padding-left: 12px;
+    height: 25px;
+    width: 200px;
+    line-height: 25px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: #f5f5f5;
+}
+
+.theSongTitle span:nth-child(2n) {
+    background-color: white;
+}
+
+.play {
+    display: flex;
+    flex-direction: column;
+}
+
+.play img {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    background-color: #f5f5f5;
+}
+
+.play img:nth-child(2n) {
+    background-color: white;
+}
+
+.burningTime {
+    display: flex;
+    flex-direction: column;
+}
+
+.burningTime span {
+    width: 120px;
+    height: 25px;
+    padding-left: 12px;
+    line-height: 25px;
+    background-color: #f5f5f5;
+}
+
+.burningTime span:nth-child(2n) {
+    background-color: white;
+}
+
+.singer {
+    display: flex;
+    flex-direction: column;
+}
+
+.singer span {
+    width: 100px;
+    height: 25px;
+    line-height: 25px;
+    padding-left: 12px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: #f5f5f5;
+}
+
+.singer span:nth-child(2n) {
+    background-color: white;
+}
+
+.theAlbum {
+    display: flex;
+    flex-direction: column;
+}
+
+.theAlbum span {
+    height: 25px;
+    line-height: 25px;
+    padding-left: 12px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: #f5f5f5;
+}
+
+.theAlbum span:nth-child(2n) {
+    background-color: white;
+}
