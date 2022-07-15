@@ -29,22 +29,22 @@ body {
 
 .leftArrow {
     position: absolute;
-    left: -80px;
-    top: 35%;
+    left: -40px;
+    top: 45%;
 }
 
 .leftArrow img {
-    width: 80px;
+    width: 40px;
 }
 
 .rightArrow {
     position: absolute;
-    right: -80px;
-    top: 35%;
+    right: -40px;
+    top: 45%;
 }
 
 .rightArrow img {
-    width: 80px;
+    width: 40px;
 }
 
 .carousel-box-dot {
@@ -87,13 +87,15 @@ body {
 }
 
 .hotRecommended-head-max {
-    font-size: 22px;
+    /* font-size: 22px; */
     line-height: 40px;
     cursor: pointer;
 }
 
 .discoloration {
     color: red;
+    font-size: 20px;
+    font-family: '华文彩云';
 }
 
 .hotRecommended-head {

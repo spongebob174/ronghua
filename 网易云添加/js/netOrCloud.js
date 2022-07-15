@@ -157,27 +157,8 @@ ajax({
         })
         function hotRecommended(res){
             let recommendAll = res.result
-            console.log(recommendAll);
+            // console.log(recommendAll);
             let html=''
-            let navigationButtons = document.querySelectorAll('li')
-            let hotRecommendedHeadMax = document.querySelector('.hotRecommended-head-max')
-            console.log(navigationButtons);
-            hotRecommendedHeadMax.classList.add('discoloration')
-            hotRecommendedHeadMax.onclick=function(){
-                this.classList.add('discoloration')
-                navigationButtons.forEach(e=>{
-                    e.classList.remove('discoloration')
-                })
-            }
-            navigationButtons.forEach(navigationButton=>{
-                navigationButton.onclick=function(){
-                    navigationButtons.forEach(e=>{
-                        e.classList.remove('discoloration')
-                    })
-                    this.classList.add('discoloration')
-                    hotRecommendedHeadMax.classList.remove('discoloration')
-                }
-            })
             recommendAll.forEach(function(recommendAll){
                 html+=`
                     <div class="playlist-box">
@@ -187,6 +168,16 @@ ajax({
                 `
             })
             playlistEl.innerHTML=html
+            let navigationButtons = document.querySelectorAll('li')
+            let hotRecommendedHeadMax = document.querySelector('.hotRecommended-head-max')
+            hotRecommendedHeadMax.classList.add('discoloration')
+            hotRecommendedHeadMax.onclick=function(){
+                this.classList.add('discoloration')
+                playlistEl.innerHTML = html
+                navigationButtons.forEach(e=>{
+                    e.classList.remove('discoloration')
+                })
+            }
             let playlistButtonEl = document.querySelectorAll('.playlistButton')
             playlistButtonEl.forEach(function(e){
                 e.onclick = function (){
@@ -195,3 +186,47 @@ ajax({
                 }
             })
         }
+        //切换歌单
+            let navigationButtons = document.querySelectorAll('li')
+            let hotRecommendedHeadMax = document.querySelector('.hotRecommended-head-max')
+            
+            navigationButtons.forEach(navigationButton=>{
+                navigationButton.onclick=function(){
+                    let text = navigationButton.textContent
+                    console.log(text);
+                    navigationButtons.forEach(e=>{
+                        e.classList.remove('discoloration')
+                    })
+                    this.classList.add('discoloration')
+                    hotRecommendedHeadMax.classList.remove('discoloration')
+                    ajax({
+                        url: `http://47.98.138.57:3000/top/playlist?time=${Date.now()}`,
+                        params: {
+                            limit:8,
+                            cat:text
+                        },
+                        method: 'get',
+                        success: switchThePlaylist
+                    })
+                    function switchThePlaylist(res){
+                        let songSingleStyle = res.playlists
+                        let addPlaylistsSwitch = ``
+                        songSingleStyle.forEach((songSingleStyle)=>{
+                            addPlaylistsSwitch +=`
+                                <div class="playlist-box">
+                                    <span><img src="${songSingleStyle.coverImgUrl}" alt=""></span>
+                                    <span class="playlistButton" data-id="${songSingleStyle.id}">${songSingleStyle.name}</span>
+                                </div>
+                            `
+                        })
+                        playlistEl.innerHTML = addPlaylistsSwitch
+                        let playlistButtonEl = document.querySelectorAll('.playlistButton')
+                        playlistButtonEl.forEach(function(e){
+                            e.onclick = function (){
+                                if (!e) return;
+                                location.href = `./歌单详情.html?id=${e.dataset.id}`
+                            }
+                        })
+                    }
+                }
+            })
